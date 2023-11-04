@@ -1,4 +1,4 @@
-package week2
+package week2.mastermind
 
 import org.junit.FixMethodOrder
 import org.junit.Test
