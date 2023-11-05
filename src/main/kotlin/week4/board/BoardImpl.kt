@@ -12,11 +12,11 @@ open class SquareBoardImpl(override val width: Int) : SquareBoard {
 
     override fun getRow(i: Int, jRange: IntProgression): List<Cell> = jRange
         .filter { col -> col in 1..width }
-        .map { col -> cells.get(i - 1).get(col - 1) }
+        .map { col -> cells[i - 1][col - 1] }
 
     override fun getColumn(iRange: IntProgression, j: Int): List<Cell> = iRange
         .filter { row -> row in 1..width }
-        .map { row -> cells.get(row - 1).get(j - 1) }
+        .map { row -> cells[row - 1][j - 1] }
 
     override fun Cell.getNeighbour(direction: Direction): Cell? = when (direction) {
         Direction.UP -> cells.getOrNull(this.i - 2)?.getOrNull(this.j - 1)
