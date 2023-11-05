@@ -3,13 +3,12 @@ package week5.playground
 class Words {
     private val list = mutableListOf<String>()
 
-    internal fun String.record(): Words {
-        list.add(this)
-        return this@Words
+    fun String.record() {
+        list += this
     }
 
-    internal operator fun String.unaryPlus() {
-        list.add(this)
+    operator fun String.unaryPlus() {
+        list += this
     }
 
     override fun toString() = list.toString()
